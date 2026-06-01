@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.header h1 {
+  color: #1F2937;
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: #6B7280;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Countdown Styles */
+.lock-text {
+  color: #EF4444;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.time-box {
+  background: #F3F4F6;
+  padding: 15px;
+  border-radius: 8px;
+  width: 70px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4F46E5;
+}
+
+.time-box small {
+  font-size: 11px;
+  color: #6B7280;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #4F46E5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #4338CA;
+}
+
+/* Result Styles */
+.result {
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result h3 {
+  color: #1F2937;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.data-row span:first-child {
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.data-row span:last-child {
+  color: #1F2937;
+  font-weight: bold;
+}
+
+.status-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.status-lulus {
+  background: #D1FAE5;
+  color: #059669;
+  border: 2px dashed #34D399;
+}
+
+.status-tidak {
+  background: #FEE2E2;
+  color: #DC2626;
+  border: 2px dashed #F87171;
+}
+
+.not-found {
+  background: #FEF2F2;
+  color: #EF4444;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 600;
+}

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h1>Pengumuman Kelulusan Siswa SMPN 12 Makassar</h1>
+      <p>Tahun Pelajaran 2025/2026</p>
+    </div>
+
+    <div id="countdown-container">
+      <p class="lock-text">Portal pengumuman akan dibuka pada:<br><strong>2 Juni 2026 - 08:00 WITA</strong></p>
+      <div class="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Hari</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Jam</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Menit</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Detik</small>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-app" style="display: none;">
+      <div class="form-group">
+        <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
+        <input type="text" id="nisn" placeholder="Masukkan NISN Anda">
+      </div>
+      <div class="form-group">
+        <label for="dob">Tanggal Lahir</label>
+        <input type="date" id="dob">
+      </div>
+      <button id="btn-cek" onclick="checkStatus()">Cek Hasil Kelulusan</button>
+
+      <div id="loading" style="display:none;">Mencari data...</div>
+      
+      <div id="result-container" class="result" style="display: none;">
+        </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
