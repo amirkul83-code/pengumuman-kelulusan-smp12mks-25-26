@@ -1,49 +1,350 @@
-<div class="container">
-  <div class="card">
-    <div class="header">
-      <h1>Pengumuman Kelulusan Siswa SMPN 12 Makassar</h1>
-      <p>Tahun Pelajaran 2025/2026</p>
-    </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan TP 2025/2026</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    <div id="countdown-container">
-      <p class="lock-text">Portal pengumuman akan dibuka pada:<br><strong>2 Juni 2026 - 08:00 WITA</strong></p>
-      <div class="countdown">
-        <div class="time-box">
-          <span id="days">00</span>
-          <small>Hari</small>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+          background: linear-gradient(135deg, #4F46E5, #7C3AED);
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+        }
+
+        .container {
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .card {
+          background: white;
+          border-radius: 16px;
+          padding: 30px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+
+        .header h1 {
+          color: #1F2937;
+          font-size: 24px;
+          margin-bottom: 5px;
+        }
+
+        .header p {
+          color: #6B7280;
+          font-size: 14px;
+          margin-bottom: 30px;
+        }
+
+        .lock-text {
+          color: #EF4444;
+          margin-bottom: 20px;
+          font-size: 14px;
+        }
+
+        .countdown {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .time-box {
+          background: #F3F4F6;
+          padding: 15px;
+          border-radius: 8px;
+          width: 70px;
+        }
+
+        .time-box span {
+          display: block;
+          font-size: 20px;
+          font-weight: bold;
+          color: #4F46E5;
+        }
+
+        .time-box small {
+          font-size: 11px;
+          color: #6B7280;
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+          text-align: left;
+        }
+
+        .form-group label {
+          display: block;
+          font-size: 13px;
+          font-weight: 600;
+          color: #374151;
+          margin-bottom: 8px;
+        }
+
+        .form-group input {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #D1D5DB;
+          border-radius: 8px;
+          font-size: 14px;
+          transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+          outline: none;
+          border-color: #4F46E5;
+          box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+        }
+
+        button {
+          width: 100%;
+          padding: 14px;
+          background: #4F46E5;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+
+        button:hover {
+          background: #4338CA;
+        }
+
+        .result {
+          margin-top: 25px;
+          padding: 20px;
+          border-radius: 8px;
+          text-align: center;
+        }
+
+        .result h3 {
+          color: #1F2937;
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+
+        .data-row {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #E5E7EB;
+          padding: 8px 0;
+          font-size: 14px;
+        }
+
+        .data-row span:first-child {
+          font-weight: 600;
+          color: #6B7280;
+        }
+
+        .data-row span:last-child {
+          color: #1F2937;
+          font-weight: bold;
+        }
+
+        .status-box {
+          margin-top: 20px;
+          padding: 15px;
+          border-radius: 8px;
+          font-size: 22px;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+
+        .status-lulus {
+          background: #D1FAE5;
+          color: #059669;
+          border: 2px dashed #34D399;
+        }
+
+        .status-tidak {
+          background: #FEE2E2;
+          color: #DC2626;
+          border: 2px dashed #F87171;
+        }
+
+        .not-found {
+          background: #FEF2F2;
+          color: #EF4444;
+          padding: 15px;
+          border-radius: 8px;
+          font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1>Pengumuman Kelulusan Siswa SMPN 12 Makassar</h1>
+          <p>Tahun Pelajaran 2025/2026</p>
         </div>
-        <div class="time-box">
-          <span id="hours">00</span>
-          <small>Jam</small>
+
+        <div id="countdown-container">
+          <p class="lock-text">Portal pengumuman akan dibuka pada:<br><strong>2 Juni 2026 - 08:00 WITA</strong></p>
+          <div class="countdown">
+            <div class="time-box">
+              <span id="days">00</span>
+              <small>Hari</small>
+            </div>
+            <div class="time-box">
+              <span id="hours">00</span>
+              <small>Jam</small>
+            </div>
+            <div class="time-box">
+              <span id="minutes">00</span>
+              <small>Menit</small>
+            </div>
+            <div class="time-box">
+              <span id="seconds">00</span>
+              <small>Detik</small>
+            </div>
+          </div>
         </div>
-        <div class="time-box">
-          <span id="minutes">00</span>
-          <small>Menit</small>
-        </div>
-        <div class="time-box">
-          <span id="seconds">00</span>
-          <small>Detik</small>
+
+        <div id="main-app" style="display: none;">
+          <div class="form-group">
+            <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
+            <input type="text" id="nisn" placeholder="Masukkan NISN Anda">
+          </div>
+          <div class="form-group">
+            <label for="dob">Tanggal Lahir</label>
+            <input type="date" id="dob">
+          </div>
+          <button id="btn-cek" onclick="checkStatus()">Cek Hasil Kelulusan</button>
+          
+          <div id="result-container" class="result" style="display: none;"></div>
         </div>
       </div>
     </div>
 
-    <div id="main-app" style="display: none;">
-      <div class="form-group">
-        <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
-        <input type="text" id="nisn" placeholder="Masukkan NISN Anda">
-      </div>
-      <div class="form-group">
-        <label for="dob">Tanggal Lahir</label>
-        <input type="date" id="dob">
-      </div>
-      <button id="btn-cek" onclick="checkStatus()">Cek Hasil Kelulusan</button>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-      <div id="loading" style="display:none;">Mencari data...</div>
-      
-      <div id="result-container" class="result" style="display: none;">
-        </div>
-    </div>
-  </div>
-</div>
+    <script>
+        // PENGATURAN WAKTU: Ubah tahun ke 2025 jika ingin membuka lock saat testing lokal
+        const TARGET_DATE = new Date("2025-06-02T08:00:00+08:00").getTime();
+        const API_URL = "https://gist.githubusercontent.com/amirkul83-code/d333ec9fde97a925870fa80482f39d0b/raw/ef61090b338cd0b68421f8e1117227c7799f9a63/gistfile1.txt";
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+        let studentsData = [];
+        let isDataLoaded = false;
+
+        // Ambil data sejak halaman dimuat
+        fetchData();
+
+        // Fungsi Countdown
+        const timerInterval = setInterval(() => {
+          const now = new Date().getTime();
+          const distance = TARGET_DATE - now;
+
+          if (distance <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById("countdown-container").style.display = "none";
+            document.getElementById("main-app").style.display = "block";
+            return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerText = days.toString().padStart(2, '0');
+          document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+          document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+          document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+
+        // Ambil Data API
+        async function fetchData() {
+          try {
+            const response = await fetch(API_URL);
+            const text = await response.text();
+            const lines = text.trim().split(/\r?\n/);
+            
+            studentsData = lines.slice(1).map(line => {
+              const col = line.split(';');
+              return {
+                nisn: col[0]?.trim(),
+                nama: col[1]?.trim(),
+                kelas: col[2]?.trim(),
+                dob: col[3]?.trim(),
+                status: col[4]?.trim()
+              };
+            });
+            isDataLoaded = true;
+          } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+          }
+        }
+
+        // Cek Status Kelulusan
+        function checkStatus() {
+          if (!isDataLoaded) {
+            alert("Data sedang dimuat, mohon tunggu sebentar...");
+            return;
+          }
+
+          const inputNisn = document.getElementById("nisn").value.trim();
+          const inputDob = document.getElementById("dob").value;
+          const resultDiv = document.getElementById("result-container");
+          
+          if(!inputNisn || !inputDob) {
+            alert("Mohon lengkapi NISN dan Tanggal Lahir.");
+            return;
+          }
+
+          const student = studentsData.find(s => s.nisn === inputNisn && s.dob === inputDob);
+          resultDiv.style.display = "block";
+
+          if (student) {
+            const isLulus = student.status.toLowerCase() === 'lulus';
+            resultDiv.innerHTML = `
+              <h3>Data Siswa</h3>
+              <div class="data-row"><span>Nama</span> <span>${student.nama}</span></div>
+              <div class="data-row"><span>NISN</span> <span>${student.nisn}</span></div>
+              <div class="data-row"><span>Kelas</span> <span>${student.kelas}</span></div>
+              <div class="status-box ${isLulus ? 'status-lulus' : 'status-tidak'}">
+                ANDA DINYATAKAN ${student.status.toUpperCase()}!
+              </div>
+            `;
+            if (isLulus) fireConfetti();
+          } else {
+            resultDiv.innerHTML = `
+              <div class="not-found">
+                Data tidak ditemukan!<br><br>Pastikan NISN dan Tanggal Lahir diinput dengan benar.
+              </div>
+            `;
+          }
+        }
+
+        // Animasi Mercon/Confetti
+        function fireConfetti() {
+          const duration = 3000;
+          const animationEnd = Date.now() + duration;
+          const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+          const interval = setInterval(function() {
+            const timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) return clearInterval(interval);
+            const particleCount = 50 * (timeLeft / duration);
+            confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+          }, 250);
+        }
+    </script>
+</body>
+</html>
